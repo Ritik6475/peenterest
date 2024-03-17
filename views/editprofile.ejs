@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=" /stylesheets/editprofile.css">
+
+    <title>Document</title>
+
+</head>
+<body>
+
+    <div class="container">
+        <h1>Edit Profile</h1>
+        <p>Keep your personal details private. Information you add here is visible to anyone who can view your profile.
+        </p>
+        <form id="edit-profile-form" action="/edit-profile" method="POST">
+          <div class="profile-picture">
+            <img id="profile-image" src="default-profile-photo.jpg" alt="Profile Photo">
+            <label for="profile-photo">Change</label>
+            <input type="file" id="profile-photo" name="profilePhoto">
+          </div>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label for="tagline">Tagline</label>
+            <input type="text" id="tagline" name="tagline" placeholder="Enter your tagline">
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" placeholder="Enter your description"></textarea>
+          </div>
+          <button type="submit">Save</button>
+        </form>
+      </div>
+      
+      
+</body>
+</html>

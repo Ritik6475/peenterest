@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/feed.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <div class="pinterest">
+
+        <div class="left">
+            <a href="#" class="logo"><i class="fab fa-pinterest"></i></a>
+            <a href="#" class="home">Home</a>
+            <a href="#" class="explore">Explore</a>
+            <a href="/add" class="create">Create</a>
+        </div>
+       
+        <div class="search">
+            <i class="fas fa-search"></i>
+            <input type="search" name="search" id="search" placeholder="Search via title name.....">
+        </div>
+    
+            <div class="right">
+            <a href="#" class="items"><i class="fas fa-bell"></i></a>
+            <a href="#" class="items"><i class="far fa-comment-dots"></i></a>
+            <a href="/profile" class="avatar">
+                <div class="img"><img src="https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1488&q=80" alt=""></div>
+                <a href="/profile" class="home">Your Profile</a>
+            </a>
+        </div>
+
+    </div>
+
+
+    <div class="container" id="imageContainer">
+        <% posts.forEach(function(elem) { %>
+            <div class="box" data-title="<%= elem.title %>">
+                <a href="#" class="image-link">
+                    <img src="/images/uploads/<%= elem.image %>" alt="<%= elem.title %>" style="filter: brightness(0.8);" onmouseover="this.style.filter = 'brightness(1)'" onmouseout="this.style.filter = 'brightness(0.8)'">
+                    <div class="overlay">
+                        <p id="uploadernamepara" style="color: black; background-color: white; border-radius: 5px; cursor: pointer; font-weight: 600;" onmouseover="showConfirmationBox1()" onmouseout="hideConfirmationBox1()">
+                            By <%= elem.userFullName %> 
+                        </p>
+                        <div class="confirmation-box1" style="display: none;">
+                            <img src="/images/uploads/<%= elem.userProfileImage %>" alt="">
+                        </div>
+                        <div class="confirmation-box" style="display: none;">
+                            <p><b>Title:-</b><%= elem.title %></p>
+                            <p><b>Description:-</b><%= elem.description %></p>
+                        </div>
+                        <div class="overlay-item top-right save" onclick="saveImage('/images/uploads/<%= elem.image %>')">
+                            Save
+                        </div>
+                        <div class="overlay-item bottom-right download" onmouseover="showUploadMessage()" onmouseout="hideUploadMessage()">
+                            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                        </div>
+                        <div class="overlay-item bottom-right menu" onmouseover="showConfirmationBox()" onmouseout="hideConfirmationBox()">
+                            <i class="fas fa-ellipsis-h"></i>
+                            <div class="option-menu">
+                                <h4></h4>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="caption"></div>
+            </div>
+        <% }) %>
+    </div>
+
+    <div class="uploadmessage" style="display: none;">
+        <p>Download the image from above save button and upload it.</p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script>
+        const searchInput = document.getElementById('search');
+        const imageContainer = document.getElementById('imageContainer');
+        const boxes = Array.from(document.querySelectorAll('.box'));
+
+        searchInput.addEventListener('input', function() {
+            const searchText = this.value.toLowerCase();
+            boxes.forEach(box => {
+                const title = box.dataset.title.toLowerCase();
+                if (title.includes(searchText)) {
+                    box.style.display = 'block';
+                } else {
+                    box.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+<script>
+
+
+    function showConfirmationBox() {
+        const confirmationBox = event.target.closest('.box').querySelector('.confirmation-box');
+    
+        confirmationBox.style.display = 'block';
+    }
+    
+    function hideConfirmationBox() {
+        const confirmationBox = event.target.closest('.box').querySelector('.confirmation-box');
+        confirmationBox.style.display = 'none';
+    }
+    
+    </script>
+
+
+<script>
+
+
+    function showConfirmationBox1() {
+        const confirmationBox1 = event.target.closest('.box').querySelector('.confirmation-box1');
+    
+        confirmationBox1.style.display = 'block';
+    }
+    
+    function hideConfirmationBox1() {
+        const confirmationBox1 = event.target.closest('.box').querySelector('.confirmation-box1');
+        confirmationBox1.style.display = 'none';
+    }
+    
+    </script>
+
+
+
+<script>
+            
+    function showFlashMessage(title, description) {
+        alert(`Title of the image:- ${title}\nDescription: ${description}`);
+    
+    }
+
+    function uploadshowFlashMessage() {
+        alert("Download the image from the above Save Button And then go to your profile and upload it ");
+    
+    }
+
+    function saveImage(imageUrl) {
+        const link = document.createElement('a');
+        link.href = imageUrl;
+        link.download = 'image.jpg'; // You can set the filename here
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+    
+    </script>
+
+
+
+
+
+
+
+<script>
+    function showUploadMessage() {
+    const uploadMessage = document.querySelector('.uploadmessage');
+    uploadMessage.style.display = 'block';
+}
+
+function hideUploadMessage() {
+    const uploadMessage = document.querySelector('.uploadmessage');
+    uploadMessage.style.display = 'none';
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

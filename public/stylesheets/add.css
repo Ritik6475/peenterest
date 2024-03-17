@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+body {
+    background-color: #191919; /* Dark background color */
+    color: #ffffff;
+    font-family: 'nunito';
+    font-optical-sizing: auto;
+    font-weight: 10;
+    font-style:normal;
+   
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #bd081c; /* Pinterest red */
+    color: #ffffff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    transition: background-color 0.3s ease;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #a30015; /* Darker red on hover */
+}
+
+.logout {
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.logout:hover {
+    background-color: #ffffff;
+    color: #bd081c;
+}
+
+.container {
+    max-width: 800px; /* Increased max-width for larger content area */
+    margin: 100px auto; /* Increased margin for better centering */
+    background-color: #333333; /* Dark background color */
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease; /* Fade-in animation */
+
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container h2 {
+    margin-bottom: 20px;
+    color: #bd081c;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #eeeeee;
+    margin-bottom: 20px;
+}
+
+input[type="file"],
+input[type="text"],
+textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    transition: border-color 0.3s ease; /* Added transition for border color */
+}
+
+input[type="file"]:focus,
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #bd081c;
+    outline: none;
+    border-width: 2px; /* Increased border thickness on focus */
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #bd081c;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #a30015; /* Darker red on hover */
+}
+
+.postform {
+    background-color: #333333; /* Dark background color */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease; /* Fade-in animation */
+}

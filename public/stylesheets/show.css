@@ -1,0 +1,192 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+body {
+    background-color: black;
+    padding: 20px;
+    margin: 0; /* Reset margin */
+    animation: fadeIn 1s ease; /* Fade-in animation */
+    font-family: 'nunito';
+    font-optical-sizing: auto;
+    font-weight: 10;
+    font-style:normal;
+   
+
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+/* Navigation bar styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000; /* Black background */
+    color: #ffffff; /* White text color */
+    padding: 10px 20px;
+    margin-left: -20px;
+    width: 100%; /* Full width */
+    position: fixed; /* Fixed position */
+    top: 0; /* Stick to the top */
+    z-index: 999; /* Ensure it's above other content */
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #bd081c; /* Pinterest red */
+    text-decoration: none;
+}
+
+.logo i {
+    margin-right: 5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff; /* White text color */
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+
+.nav-links a:hover {
+    color: #bd081c; /* Pinterest red */
+    background-color: rgba(189, 8, 28, 0.2); /* Light red on hover */
+}
+
+.logout {
+    background-color: #bd081c; /* Pinterest red */
+    color: #ffffff; /* White text color */
+}
+
+.logout:hover {
+    background-color: #8b0000; /* Darker red on hover */
+}
+
+/* Animation for cards */
+
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cards {
+    padding-top: 3vh;
+    width: 98%;
+    background-color: white;
+    margin-top: 70px;
+    columns: 6;
+    column-gap: 20px;
+    position: relative;
+
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+    break-inside: avoid;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-top: 20px;
+
+}
+.card img {
+    max-width: 100%;
+    min-width: 100%;
+    border-radius: 10px;
+    transition: opacity 1s ease;
+
+
+}
+
+.card:hover img {
+    transform: scale(1.1); /* Scale up on hover */
+    background-color: #8b0000;
+    color: white;
+
+
+}
+.card:hover{
+    background-color: red;
+    color: white;
+    
+
+}
+
+.card h5 {
+    padding: 0;
+    margin: 0;
+   font-size: 16px;
+    color: #333333;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+
+
+
+.confirmation-box {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #343434;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    z-index: 9999;
+    width: 400px;
+    height: 200px;
+    text-align: center;
+    overflow: hidden;
+}
+.confirmation-box p {
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.611);
+    font-size: 18px;
+}
+.confirmation-box button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+.confirmation-box button:hover {
+    background-color: red;
+    color: white;
+}
+#confirmYesButton {
+    margin-right: 20px;
+}
+
+#confirmNoButton:hover {
+    background-color: #32de84;
+}

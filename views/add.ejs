@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Post</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/add.css">
+</head>
+<body>
+    <nav>
+        <a href="#" class="logo"><i class="fab fa-pinterest"></i>Pinterest</a>
+        <div class="nav-links">
+            <a href="/profile">Profile</a>
+            <a href="/feed">Feed</a>
+            <a href="/logout" class="logout">Logout</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="cnp">
+            <h2>Create a New Post</h2>
+            <hr>
+        </div>
+
+        <form action="/createpost" class="postform" method="post" enctype="multipart/form-data">
+            <input type="file" name="postimage" id="" accept="image/*, video/mp4, video/quicktime" class="onei" required>
+            <input type="text" name="title" id="" placeholder="Title" class="twoi" required>
+            <textarea rows="4" placeholder="Description" name="description" required></textarea>
+            <input type="hidden" name="userProfileImage" value="<%= user.profileImage %>">
+            <input type="submit" class="fouri" value="Create Post">
+        
+        </form>
+
+        
+    </div>
+</body>
+</html>
